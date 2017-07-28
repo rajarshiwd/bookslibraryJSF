@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        
+        <style>
+                      body {
+   background: url('css/library1.jpg') no-repeat left top fixed;
+   background-size: cover; 
+
+            
+} 
+            .menu{
+                width:10%;
+                height:30px;
+            }
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3BB9FF;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #fafafa;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3BB9FF;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+article {
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 1em;
+    overflow: hidden;
+}
+                               
+
+.button {
+                position:relative;
+                padding:6px 15px;
+                left:-8px;
+                border:2px solid #207cca;
+                background-color:#207cca;
+                color:#fafafa;
+}
+.button:hover  {
+                background-color:#fafafa;
+                color:#207cca;
+}
+
+
+
+
+dive {
+float :right;
+    width: 225px;
+    height:350px;
+    padding: 0px;
+    border: 0px solid black;
+    margin: 0;
+}
+
+M{
+font-size: 0.80em;
+}
+k:link, k:visited {
+    background-color:#3BB9FF;
+    color: white;
+    padding: 6px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+k:hover, k:active {
+    background-color:#3BB9FF;
+}
+            </style>
+    </h:head>
+    <h:body>
+    <div id='cssmenu'>
+    <ul>
+ <li><a href='faces/Homepage.xhtml'>HOME</a></li>
+  <li><a href="file:///C:/Users/rajarshi/Desktop/transportation.html">UpdateBook</a></li>
+  <li><a href="file:///C:/Users/rajarshi/Desktop/DISCONTACT.html">DeleteBook</a></li>
+  <li><a href="faces/addbook.xhtml">AddBook</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Account</a>
+    <div class="dropdown-content">
+      <a href='faces/Loginpage.xhtml'>login</a>
+       
+      <a href="file:///C:/Users/rajarshi/Desktop/surveyform.html">Profile</a>
+      
+    </div>
+  </li>
+                                                            
+    </ul>
+    </div>
+        <h1 align="center" style="color: sandybrown">Login Page:</h1>
+        <center>
+<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,700' rel='stylesheet' type='text/css'/>
+  
+           <h:form>
+                    <div>
+                        <br /><br /><br /> 
+                        <h:outputLabel value="User Name:" style="color:brown;font-style: normal;font-size: 100%"/><h:inputText value="#{dbConnectionBean.username}"/>
+		<br/><br/>
+                <h:outputLabel value="Password:" style="color:brown;font-style: normal;font-size: 100%"/>:<h:inputSecret value="#{dbConnectionBean.password}"/>
+                <br/><br/>
+                <h:commandButton value = "Login" class="btn" action = "#{dbConnectionBean.Login()}"/>
+               &nbsp;&nbsp;
+               <h:commandButton value = "Reset" class="btn" action = "#{dbConnectionBean.Reset()}"/>
+                 
+               <h:messages globalOnly="True" errorClass="err" style="color: orangered;font-size: 100%"></h:messages>
+                    </div>
+	</h:form> 
+</center>
+        <script src="js/index.js"></script>    
+    </h:body>
+</html>

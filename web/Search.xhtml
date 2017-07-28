@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fcore="http://java.sun.com/jsf/core"
+      >
+    <h:head>
+        <title>Online Library</title>
+    <link rel="stylesheet" href="./css/style.css"/>
+        <link rel="stylesheet" href="./css/styles.css"/>
+        <style>
+            
+            body{
+                background-image: url('Images/Sample.jpg');
+            }
+            .menu{
+                width:10%;
+                height:30px;
+            }
+      
+.table-container {
+    height: auto;
+    width:70%;
+}
+table {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+}
+table thead {
+    /* head takes the height it requires, 
+    and it's not scaled when table is resized */
+    flex: 0 0 auto;
+    width: calc(100% - 0.9em);
+}
+table tbody {
+    /* body takes all the remaining available space */
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: scroll;
+}
+table tbody tr {
+    width: 100%;
+}
+table thead,
+table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
+/* decorations */
+.table-container {
+    border: 1px solid black;
+    padding: 0.3em;
+}
+table {
+    border: 1px solid lightgrey;
+}
+table td, table th {
+    padding: 0.3em;
+    border: 1px solid lightgrey;
+    color: black;
+}
+table th {
+    border: 1px solid grey;
+}    
+tr:nth-child(odd){background-color: sandybrown}
+tr:nth-child(even){background-color:  white}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+    .err {
+            color: red;
+        }
+</style>
+    </h:head>
+    <h:body>
+          <div id ='cssmenu'>
+           <ul>
+        <li><a href= 'Homepage.xhtml'>Home</a></li>
+        <li><a href= 'Loginpage.xhtml'>Maintenance</a></li>
+    </ul>
+          </div>
+     
+     <center>
+          <h:messages globalOnly="false" errorClass="err" style="color: darkorange;font-size: 200%"></h:messages>
+            <fcore:view>
+                <h:form>
+                    <div class="table-container">
+                        <h:dataTable var="list" value="#{dbQueryBean.Show_AllBooks()}" border="1" cellpadding="2" cellspacing="2">
+                         <h:column>
+                            <fcore:facet name="header">ISBN</fcore:facet>
+                            <h:outputText value="#{list.ISBN}"/>
+                        </h:column>
+                        <h:column>
+                            <fcore:facet name="header">Title</fcore:facet>
+                            <h:outputText value="#{list.title}"/>
+                        </h:column>
+                        <h:column>
+                            <fcore:facet name="header">Edition</fcore:facet>
+                            <h:outputText value="#{list.edition}"/>
+                        </h:column>
+                    <h:column>
+                            <fcore:facet name="header">Copyright</fcore:facet>
+                            <h:outputText value="#{list.copyright}"/>
+                        </h:column>
+                        <h:column>
+                            <fcore:facet name="header">Author Fname</fcore:facet>
+                            <h:outputText value="#{list.firstName}"/>
+                        </h:column>
+                        <h:column>
+                            <fcore:facet name="header">Author Lname</fcore:facet>
+                            <h:outputText value="#{list.lastName}"/>
+                        </h:column>
+                    </h:dataTable>
+                    </div>
+                    <br/><br/>
+                    </h:form>
+            </fcore:view>
+        </center>
+
+    </h:body>
+</html>

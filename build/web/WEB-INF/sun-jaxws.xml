@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+  <endpoint implementation="bookquery.WebServiceReferences" name="QueryBooks" url-pattern="/QueryBooks"/>
+  <endpoint implementation="bookquery.QueryBooks_Service" name="QueryBooks_Service" url-pattern="/QueryBooks_Service"/>
+  <endpoint implementation="bookquery.QueryBooks" name="QueryBooks" url-pattern="/QueryBooks"/>
+  <endpoint implementation="bookquery.WebServiceReferences" name="WebServiceReferences" url-pattern="/WebServiceReferences"/>
+</endpoints>

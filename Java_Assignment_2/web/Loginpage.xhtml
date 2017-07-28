@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Login Page</title>
+            <link rel="stylesheet" href="./css/style.css"/>
+            <link rel="stylesheet" href="./css/styles.css"/>
+    </h:head>
+    <h:body>
+    <div id='cssmenu'>
+    <ul>
+        <li><a href='Homepage.xhtml'>Home</a></li>
+        <li><a href='Loginpage.xhtml'>Maintenance</a></li>
+    </ul>
+    </div>
+        <h1 align="center" style="color: sandybrown">Login Page:</h1>
+        <center>
+<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,700' rel='stylesheet' type='text/css'/>
+  
+           <h:form>
+                    <div>
+                        <br /><br /><br /> 
+                        <h:outputLabel value="User Name:" style="color:brown;font-style: normal;font-size: 100%"/><h:inputText value="#{dbConnectionBean.username}"/>
+		<br/><br/>
+                <h:outputLabel value="Password:" style="color:brown;font-style: normal;font-size: 100%"/>:<h:inputSecret value="#{dbConnectionBean.password}"/>
+                <br/><br/>
+                <h:commandButton value = "Login" class="btn" action = "#{dbConnectionBean.Login()}"/>
+               &nbsp;&nbsp;
+               <h:commandButton value = "Reset" class="btn" action = "#{dbConnectionBean.Reset()}"/>
+                 
+               <h:messages globalOnly="True" errorClass="err" style="color: orangered;font-size: 100%"></h:messages>
+                    </div>
+	</h:form> 
+</center>
+        <script src="js/index.js"></script>    
+    </h:body>
+</html>

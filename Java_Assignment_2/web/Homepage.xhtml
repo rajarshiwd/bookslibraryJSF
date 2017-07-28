@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Online Library</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/styles.css"/>
+        <style>
+            body{
+                background-image: url('Images/Bookpage.jpg');
+            }
+            .menu{
+                width:10%;
+                height:30px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div id='cssmenu'>
+    <ul>
+        <li><a href= 'Homepage.xhtml'>Home</a></li>
+        <li><a href= 'Loginpage.xhtml'>Maintenance</a></li>
+    </ul>
+    </div>
+        <div align="center">
+            <h1 style="color:lightgreen;font-size: 300%">Online Library</h1>
+        </div>
+         <center>
+             <h:form>
+             <div>
+                   <br/><br/>  <br/><br/>  <br/><br/>
+                   <h1 style="color: lightgreen"> Search Books </h1>
+                    <h:outputLabel value="Search:" style="color:lightgreen;font-style:italic;font-size: 200%"/> 
+                    <h:inputText value="#{dbQueryBean.search}" style= "width:20%;height:35px"/>
+                    &nbsp; &nbsp; <h:outputLabel value="Category:" style="color:lightgreen;font-style: normal;font-size: 100%;height:45px"/>
+                 <h:selectOneMenu value = "{}" styleClass= "menu">
+                        <f:selectItem itemValue=" " itemLabel = "Keyword"/>
+                        <f:selectItem itemValue="ISBN" itemLabel = "ISBN"/>
+                        <f:selectItem itemValue="BookName" itemLabel = "BookName"/>
+			<f:selectItem itemValue="Afname" itemLabel = "Author FirstName"/>
+			<f:selectItem itemValue="Alname" itemLabel = "Author LastName"/>
+		</h:selectOneMenu>
+                <br /><br/><br/>
+                <h:commandButton class="btn"  action="Search" actionListener = "#{dbQueryBean.Filter_Results()}" value="Search">
+                            </h:commandButton>
+                &nbsp;&nbsp;
+                <h:commandButton class="btn"  action="Search" actionListener = "#{dbQueryBean.Show_AllBooks()}" value="Show All Books">
+                            </h:commandButton>
+             </div>
+                 </h:form>
+        </center>
+        <script src="js/index.js"></script>    
+    </h:body>
+</html>
